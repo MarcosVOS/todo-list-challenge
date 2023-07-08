@@ -1,0 +1,27 @@
+.taskContainer {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 12px;
+    padding: 16px;
+
+    width: 700px;
+
+    border-radius: 8px;
+    border: 1px solid var(--gray-400);
+    background: var(--gray-500);
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.06);
+
+}
+
+.taskText {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 0;
+
+    color: var(--gray-100);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+}
