@@ -15,10 +15,10 @@
   --danger: #E25858;
 }
 
-body,
-input,
-textarea,
-button {
-  font-family: 'Roboto' sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
   line-height: 140%;
 }

@@ -1,0 +1,35 @@
+.header {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--gray-700, #0D0D0D);
+}
+
+.logoTo {
+  margin-left: 12px;
+  color: var(--blue);
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.logoDo {
+  color: var(--purple);
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  margin-top: -24px;
+  gap: 8px;
+}
+
+body {
+  background: var(--gray-600, #1A1A1A);
+}
