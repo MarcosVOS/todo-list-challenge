@@ -92,7 +92,10 @@
 
 .taskContainer {
   display: flex;
-  justify-content: center;
+  gap: 12px;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
 }
 
 body {
