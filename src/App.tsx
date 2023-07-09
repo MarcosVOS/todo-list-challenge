@@ -23,7 +23,6 @@ function App() {
   
   function HandleChangeInputFieldAddingTaskText(event: ChangeEvent<HTMLTextAreaElement>){
     setInputFieldAddingTaskText(event.target.value)
-    // setInputFieldAddingTaskText('')
   }
 
   function HandleChangeAddTask(){
@@ -34,6 +33,7 @@ function App() {
 
     }
     setTasks([...tasks, newTask])
+    setInputFieldAddingTaskText('')
   }
 
   function HandleChangeDeleteTask(taskId: string){
