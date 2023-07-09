@@ -23,6 +23,7 @@ function App() {
   
   function HandleChangeInputFieldAddingTaskText(event: ChangeEvent<HTMLTextAreaElement>){
     setInputFieldAddingTaskText(event.target.value)
+    // setInputFieldAddingTaskText('')
   }
 
   function HandleChangeAddTask(){
@@ -35,8 +36,39 @@ function App() {
     setTasks([...tasks, newTask])
   }
 
-  console.log(">>> inputFieldAddingTaskText: ",inputFieldAddingTaskText)
-  let thereAreTasks = tasks.length > 0 
+  function HandleChangeDeleteTask(taskId: string){
+    setTasks(tasks.filter(task => task.Id != taskId))
+  }
+
+  function HandleChangeStatusTask(taskId: string){
+    const newStatus = tasks.map(task=>{
+      if(task.Id == taskId){
+        task.finished = !task.finished
+      }
+      return task
+    })
+    setTasks(newStatus)
+  }
+
+
+  const thereAreTasks = tasks.length > 0 
+  const createdTasks = tasks.length
+  const taskDone = tasks.reduce((accumulator: number, task: Task) => {
+    if (task.finished === true) {
+      return accumulator + 1;
+    } else {
+      return accumulator;
+    }
+  }, 0);
+
+  const taskNotDone  = tasks.reduce((accumulator: number, task: Task)=>{
+    if(task.finished == false){
+      return accumulator + 1
+    }else {
+      return accumulator
+    }
+  },0)
+  
 
   return (
     <>
@@ -51,10 +83,10 @@ function App() {
         <Button text="Criar" onClick={HandleChangeAddTask}/>
       </section>
       <div className={styles.taskStatus}>
-        <h6 className={styles.tasksCreated}>Tarefas criadas<span className={styles.taskCount}>0</span></h6>
-        <h6 className={styles.tasksDone}>Concluídas<span className={styles.taskCount}>0</span></h6>
+        <h6 className={styles.tasksCreated}>Tarefas criadas<span className={styles.taskCount}>{createdTasks}</span></h6>
+        <h6 className={styles.tasksDone}>Concluídas<span className={styles.taskCount}>{taskDone} de {taskNotDone}</span></h6>
       </div>
-      {thereAreTasks ?<div className={styles.taskContainer}>{tasks.map(task => {return <Task key={task.Id} name={task.name}/>} )}</div> : 
+      {thereAreTasks ?<div className={styles.taskContainer}>{tasks.map(task => {return <Task onDeleteTask={HandleChangeDeleteTask} onChangeStatusTask={HandleChangeStatusTask} status={task.finished} key={task.Id} id={task.Id} name={task.name}/>} )}</div> : 
       <div className={styles.thereIsNoTask}>
         <img src={ClipboardIcon} alt="" />
         <span className={styles.thereIsNoTaskMessage}>

@@ -14,7 +14,7 @@
 
 }
 
-.taskText {
+.taskTextUndone {
     display: flex;
     flex-direction: column;
     flex: 1 0 0;
@@ -24,6 +24,19 @@
     font-style: normal;
     font-weight: 400;
     line-height: 140%;
+}
+
+.taskTextdone {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 0;
+
+    color: var(--gray-300);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    text-decoration: line-through;
 }
 
 .trashIcon {
@@ -40,6 +53,11 @@
 
 .trashIconSVG {
     display: block;
+}
+
+button {
+    background: none;
+    border: none;
 }
 
 .trashIcon:hover .trashIconSVG {
