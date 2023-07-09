@@ -26,6 +26,7 @@ function App() {
   }
 
   function HandleChangeAddTask(){
+    event?.preventDefault()
     const newTask : Task = {
       Id : `${tasks.length + 1}`,
       finished : false,
@@ -78,10 +79,10 @@ function App() {
       <h1 className={styles.logoDo}>do</h1>
      </header>
      <main>
-      <section className={styles.section}>
-        <Input value={inputFieldAddingTaskText} onAddTask={HandleChangeInputFieldAddingTaskText}/>
-        <Button text="Criar" onClick={HandleChangeAddTask} disabled={inputFieldAddingTaskText.length <= 0}/>
-      </section>
+        <form className={styles.section} onSubmit={HandleChangeAddTask}>
+          <Input value={inputFieldAddingTaskText} onAddTask={HandleChangeInputFieldAddingTaskText}/>
+          <Button text="Criar" type="submit" />
+        </form>
         <div className={styles.taskStatus}>
           <h6 className={styles.tasksCreated}>Tarefas criadas<span className={styles.taskCount}>{createdTasks}</span></h6>
           <h6 className={styles.tasksDone}>Concluídas<span className={styles.taskCount}>{taskDone} de {taskNotDone}</span></h6>

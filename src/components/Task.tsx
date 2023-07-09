@@ -14,7 +14,7 @@ interface TaskProps {
 
 export function Task({name,onDeleteTask, ...props}:TaskProps){
     return(
-    <div key={props.key} className={styles.taskContainer}>
+    <div key={props.key} className={props.status ?styles.taskContainer : styles.taskContainerDone}>
 
         <button onClick={()=>{props.onChangeStatusTask(props.id)}}>
             {props.status  ? <CheckedIcon/> : <UncheckedIcon/>}
