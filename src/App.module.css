@@ -30,14 +30,12 @@
   gap: 8px;
 }
 
-
-
 .taskStatus {
   display: flex;
+  margin: 0 auto;
   justify-content: space-between;
   align-items: center;
-  margin-left: 22%;
-  margin-right: 22%;
+  width: 730px;
   padding-bottom: 25px;
   margin-top: 65px;
 }
@@ -76,6 +74,8 @@
   flex-direction: column;
   align-items: center;
   gap: 16px;
+  width: 730px;
+  margin: 0 auto;
   align-self: stretch;
   padding: 64px 24px;
 

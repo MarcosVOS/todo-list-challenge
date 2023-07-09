@@ -82,18 +82,31 @@ function App() {
         <Input value={inputFieldAddingTaskText} onAddTask={HandleChangeInputFieldAddingTaskText}/>
         <Button text="Criar" onClick={HandleChangeAddTask}/>
       </section>
-      <div className={styles.taskStatus}>
-        <h6 className={styles.tasksCreated}>Tarefas criadas<span className={styles.taskCount}>{createdTasks}</span></h6>
-        <h6 className={styles.tasksDone}>Concluídas<span className={styles.taskCount}>{taskDone} de {taskNotDone}</span></h6>
-      </div>
-      {thereAreTasks ?<div className={styles.taskContainer}>{tasks.map(task => {return <Task onDeleteTask={HandleChangeDeleteTask} onChangeStatusTask={HandleChangeStatusTask} status={task.finished} key={task.Id} id={task.Id} name={task.name}/>} )}</div> : 
-      <div className={styles.thereIsNoTask}>
-        <img src={ClipboardIcon} alt="" />
-        <span className={styles.thereIsNoTaskMessage}>
-          <strong>Você ainda não tem tarefas cadastradas</strong>
-          Crie tarefas e organize seus itens a fazer
-        </span>
-      </div>}
+        <div className={styles.taskStatus}>
+          <h6 className={styles.tasksCreated}>Tarefas criadas<span className={styles.taskCount}>{createdTasks}</span></h6>
+          <h6 className={styles.tasksDone}>Concluídas<span className={styles.taskCount}>{taskDone} de {taskNotDone}</span></h6>
+        </div> 
+      {thereAreTasks ?
+        <div className={styles.taskContainer}>
+          {tasks.map(task => {
+            return <Task 
+              onDeleteTask={HandleChangeDeleteTask} 
+              onChangeStatusTask={HandleChangeStatusTask} 
+              status={task.finished}
+              key={task.Id}
+              id={task.Id}
+              name={task.name}
+            />
+          })}
+        </div> : 
+        <div className={styles.thereIsNoTask}>
+          <img src={ClipboardIcon} alt="" />
+          <span className={styles.thereIsNoTaskMessage}>
+            <strong>Você ainda não tem tarefas cadastradas</strong>
+            Crie tarefas e organize seus itens a fazer
+          </span>
+        </div>
+      }
      </main>
     </>
   )
