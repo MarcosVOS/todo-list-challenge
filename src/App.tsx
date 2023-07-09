@@ -80,7 +80,7 @@ function App() {
      <main>
       <section className={styles.section}>
         <Input value={inputFieldAddingTaskText} onAddTask={HandleChangeInputFieldAddingTaskText}/>
-        <Button text="Criar" onClick={HandleChangeAddTask}/>
+        <Button text="Criar" onClick={HandleChangeAddTask} disabled={inputFieldAddingTaskText.length <= 0}/>
       </section>
         <div className={styles.taskStatus}>
           <h6 className={styles.tasksCreated}>Tarefas criadas<span className={styles.taskCount}>{createdTasks}</span></h6>
