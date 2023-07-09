@@ -6,7 +6,7 @@ import { CheckedIcon } from "./Icons/CheckedIcon";
 interface TaskProps {
     id: string,
     name: string,
-    status: false
+    status: boolean
     key: string
     onDeleteTask: (Id: string)=> void
     onChangeStatusTask: (Id: string)=> void
