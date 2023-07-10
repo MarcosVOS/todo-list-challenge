@@ -1,7 +1,7 @@
 import { ButtonHTMLAttributes } from "react";
-import { UncheckedIcon } from "./Icons/UncheckedIcon";
+import  UncheckedIcon  from "../assets/UncheckedIcon.svg";
 import styles from './Task.module.css'
-import { CheckedIcon } from "./Icons/CheckedIcon";
+import CheckedIcon  from "../assets/CheckedIcon.svg";
 
 interface TaskProps {
     id: string,
@@ -17,7 +17,7 @@ export function Task({name,onDeleteTask, ...props}:TaskProps){
     <div key={props.key} className={props.status ?styles.taskContainer : styles.taskContainerDone}>
 
         <button onClick={()=>{props.onChangeStatusTask(props.id)}}>
-            {props.status  ? <CheckedIcon/> : <UncheckedIcon/>}
+            {props.status  ? <img src={CheckedIcon} alt="" /> : <img src={UncheckedIcon}></img>}
         </button>
         
         <span className={props.status ? styles.taskTextdone : styles.taskTextUndone }>{name}</span>

@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes } from 'react'
 import styles from './Button.module.css'
-import { PlusIcon } from './Icons/PlusIcon'
+import PlusIcon  from '../assets/PlusIcon.svg'
 
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -10,6 +10,6 @@ export function Button({ text, ...props}:ButtonProps){
     return(
     <button className={styles.button} {...props}>
         {text}
-        <PlusIcon/>
+        <img src={PlusIcon} alt="" />
     </button>)
 }

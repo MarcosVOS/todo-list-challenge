@@ -1,11 +1,11 @@
-import { LogoIcon } from "./components/Icons/LogoIcon"
 import styles from './App.module.css'
 import './global.css'
 import { Input } from "./components/Input"
 import { Button } from "./components/Button"
-import ClipboardIcon from "../src/components/Icons/Clipboard.svg";
+import ClipboardIcon from "../src/assets/ClipboardIcon.svg";
 import { Task } from "./components/Task"
 import { ChangeEvent, useState } from "react"
+import LogoIcon from './assets/LogoIcon.svg'
 
 
 interface Task {
@@ -74,7 +74,7 @@ function App() {
   return (
     <>
      <header className={styles.header}> 
-      <LogoIcon/>
+      <img src={LogoIcon}></img>
       <h1 className={styles.logoTo}>to</h1>
       <h1 className={styles.logoDo}>do</h1>
      </header>
