@@ -10,6 +10,6 @@ export function Button({ text, ...props}:ButtonProps){
     return(
     <button className={styles.button} {...props}>
         {text}
-        <img src={PlusIcon} alt="" />
+        <img src={PlusIcon} alt="Sinal de adição" />
     </button>)
 }

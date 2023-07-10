@@ -74,7 +74,7 @@ function App() {
   return (
     <>
      <header className={styles.header}> 
-      <img src={LogoIcon}></img>
+      <img src={LogoIcon} alt='Icone logo'></img>
       <h1 className={styles.logoTo}>to</h1>
       <h1 className={styles.logoDo}>do</h1>
      </header>
@@ -101,7 +101,7 @@ function App() {
           })}
         </div> : 
         <div className={styles.thereIsNoTask}>
-          <img src={ClipboardIcon} alt="" />
+          <img src={ClipboardIcon} alt="Icone de prancheta" />
           <span className={styles.thereIsNoTaskMessage}>
             <strong>Você ainda não tem tarefas cadastradas</strong>
             Crie tarefas e organize seus itens a fazer

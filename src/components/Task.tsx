@@ -17,7 +17,7 @@ export function Task({name,onDeleteTask, ...props}:TaskProps){
     <div key={props.key} className={props.status ?styles.taskContainer : styles.taskContainerDone}>
 
         <button onClick={()=>{props.onChangeStatusTask(props.id)}}>
-            {props.status  ? <img src={CheckedIcon} alt="" /> : <img src={UncheckedIcon}></img>}
+            {props.status  ? <img src={CheckedIcon} alt="Icone done" /> : <img src={UncheckedIcon} alt="Icone not done"></img>}
         </button>
         
         <span className={props.status ? styles.taskTextdone : styles.taskTextUndone }>{name}</span>
