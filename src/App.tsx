@@ -9,7 +9,7 @@ import LogoIcon from './assets/LogoIcon.svg'
 
 
 interface Task {
-  Id: string
+  id: string
   finished: boolean
   name: string
 }
@@ -28,7 +28,7 @@ function App() {
   function HandleChangeAddTask(){
     event?.preventDefault()
     const newTask : Task = {
-      Id : `${tasks.length + 1}`,
+      id : `${tasks.length + 1}`,
       finished : false,
       name : inputFieldAddingTaskText,
 
@@ -38,12 +38,12 @@ function App() {
   }
 
   function HandleChangeDeleteTask(taskId: string){
-    setTasks(tasks.filter(task => task.Id != taskId))
+    setTasks(tasks.filter(task => task.id != taskId))
   }
 
   function HandleChangeStatusTask(taskId: string){
     const newStatus = tasks.map(task=>{
-      if(task.Id == taskId){
+      if(task.id == taskId){
         task.finished = !task.finished
       }
       return task
@@ -94,8 +94,8 @@ function App() {
               onDeleteTask={HandleChangeDeleteTask} 
               onChangeStatusTask={HandleChangeStatusTask} 
               status={task.finished}
-              key={task.Id}
-              id={task.Id}
+              key={task.id}
+              id={task.id}
               name={task.name}
             />
           })}
