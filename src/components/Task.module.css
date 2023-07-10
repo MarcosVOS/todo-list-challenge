@@ -69,6 +69,6 @@ button {
     border: none;
 }
 
-.trashIcon:hover .trashIconSVG {
+.trashIcon:hover>* {
     fill: var(--danger);
 }
