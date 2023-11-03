@@ -1,4 +1,3 @@
-import { ButtonHTMLAttributes } from "react";
 import  UncheckedIcon  from "../assets/UncheckedIcon.svg";
 import styles from './Task.module.css'
 import CheckedIcon  from "../assets/CheckedIcon.svg";

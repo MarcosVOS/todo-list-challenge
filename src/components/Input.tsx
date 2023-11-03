@@ -1,4 +1,4 @@
-import { ChangeEvent, TextareaHTMLAttributes, useState } from 'react'
+import { ChangeEvent, TextareaHTMLAttributes } from 'react'
 import styles from './Input.module.css'
 
 interface InputProps extends TextareaHTMLAttributes<HTMLTextAreaElement>{
